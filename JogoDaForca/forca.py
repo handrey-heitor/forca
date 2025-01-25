@@ -1,7 +1,12 @@
-from palavras import sorteio
-
 
 def forca():
+    import random
+    lista_de_palavras = ['azul', 'vermelho',
+                               'cavalo', 'karma', 'caramelo', 'mar']
+
+    def sorteio():
+        return random.choice(lista_de_palavras)
+
     palavra = sorteio()
     letras_lista = []
     vidas = 5
@@ -9,6 +14,7 @@ def forca():
     pontos = 0
 
     while True:
+
         for letra in palavra:
             if letra in letras_lista:
                 print(letra, end=" ")
@@ -37,12 +43,14 @@ def forca():
         print(f"você perdeu! a palavra era {palavra}!")
 
 
-input("S para continuar ou qualquer tecla para sair:")
+def rodando():
+    while True:
+        forca()
+        continuar = input(
+            "\nDigite 's' para jogar novamente ou qualquer outra tecla para sair: ").lower()
+        if continuar != 's':
+            print("Obrigado por jogar! Até a próxima.")
+            break
 
-while True:
-    forca()
-    continuar = input(
-        "\nDigite 's' para jogar novamente ou qualquer outra tecla para sair: ").lower()
-    if continuar != 's':
-        print("Obrigado por jogar! Até a próxima.")
-        break
+
+rodando()

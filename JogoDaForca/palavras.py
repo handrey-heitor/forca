@@ -6,4 +6,3 @@ pedrin_matador_de_porco = ['azul', 'vermelho',
 
 def sorteio():
     return random.choice(pedrin_matador_de_porco)
-
